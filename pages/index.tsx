@@ -12,10 +12,11 @@ import { FormEvent, useState } from "react";
 import useFetch from "use-http";
 export default function Home() {
   const [inputs, setInputs] = useState({
-    variance_wavelet_transformed_image: 3.2414,
-    skewness_wavelet_transformed_image: 0.40971,
-    curtosis_wavelet_transformed_image: 1.4015,
-    entropy_image: 1.1952,
+    zylinder: 6,
+    ps: 133,
+    gewicht: 3410,
+    beschleunigung: 15.8,
+    baujahr: 78,
   });
 
   const handleOnChange = (
@@ -37,7 +38,7 @@ export default function Home() {
     console.log("\x1b[33m%s\x1b[0m", "%c >> event.", event);
     console.log("\x1b[33m%s\x1b[0m", "%c >> inputs", inputs);
     get(
-      `/predict?variance_wavelet_transformed_image=${inputs.variance_wavelet_transformed_image}&skewness_wavelet_transformed_image=${inputs.skewness_wavelet_transformed_image}&curtosis_wavelet_transformed_image=${inputs.curtosis_wavelet_transformed_image}&entropy_image=${inputs.entropy_image}`
+      `/predict?zylinder=${inputs.zylinder}&ps=${inputs.ps}&gewicht=${inputs.gewicht}&beschleunigung=${inputs.beschleunigung}&baujahr=${inputs.baujahr}`
     );
   };
   return (
@@ -49,50 +50,53 @@ export default function Home() {
       </Head>
 
       <main>
-        <Heading as="h1">Welcome to Frontend</Heading>
-        {/* ['variance_wavelet_transformed_image', 'skewness_wavelet_transformed_image', 'curtosis_wavelet_transformed_image', 'entropy_image', 'class'] */}
+        <Heading as="h1" marginBottom="5">Predict miles per gallon</Heading>
+        {/* ['zylinder', 'ps', 'gewicht', 'beschleunigung', 'baujahr'] */}
         <form onSubmit={onSubmit}>
-          <FormControl id="variance_wavelet_transformed_image" isRequired>
+          <FormControl id="zylinder" isRequired>
             <Input
               onChange={handleOnChange}
               type="number"
               step="any"
-              value={inputs.variance_wavelet_transformed_image}
+              value={inputs.zylinder}
             />
-            <FormLabel fontWeight="bold">
-              variance_wavelet_transformed_image
-            </FormLabel>
+            <FormLabel fontWeight="bold">zylinder</FormLabel>
           </FormControl>
-          <FormControl id="skewness_wavelet_transformed_image" isRequired>
+          <FormControl id="ps" isRequired>
             <Input
               onChange={handleOnChange}
               type="number"
               step="any"
-              value={inputs.skewness_wavelet_transformed_image}
+              value={inputs.ps}
             />
-            <FormLabel fontWeight="bold">
-              skewness_wavelet_transformed_image
-            </FormLabel>
+            <FormLabel fontWeight="bold">ps</FormLabel>
           </FormControl>
-          <FormControl id="curtosis_wavelet_transformed_image" isRequired>
+          <FormControl id="gewicht" isRequired>
             <Input
               onChange={handleOnChange}
               type="number"
               step="any"
-              value={inputs.curtosis_wavelet_transformed_image}
+              value={inputs.gewicht}
             />
-            <FormLabel fontWeight="bold">
-              curtosis_wavelet_transformed_image
-            </FormLabel>
+            <FormLabel fontWeight="bold">gewicht</FormLabel>
           </FormControl>
-          <FormControl id="entropy_image" isRequired>
+          <FormControl id="beschleunigung" isRequired>
             <Input
               onChange={handleOnChange}
               type="number"
               step="any"
-              value={inputs.entropy_image}
+              value={inputs.beschleunigung}
             />
-            <FormLabel fontWeight="bold">entropy_image</FormLabel>
+            <FormLabel fontWeight="bold">beschleunigung</FormLabel>
+          </FormControl>
+          <FormControl id="baujahr" isRequired>
+            <Input
+              onChange={handleOnChange}
+              type="number"
+              step="any"
+              value={inputs.baujahr}
+            />
+            <FormLabel fontWeight="bold">baujahr</FormLabel>
           </FormControl>
           <Button
             colorScheme="blue"
