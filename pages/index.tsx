@@ -28,8 +28,8 @@ export default function Home() {
     }));
   };
 
-  const { get, response, loading, error, data } = useFetch(
-    `https://baummethoden.herokuapp.com`
+  const { get, loading, data } = useFetch(
+    process.env.NEXT_PUBLIC_PREDICTION_API
   );
 
   const onSubmit = async (event: FormEvent) => {
