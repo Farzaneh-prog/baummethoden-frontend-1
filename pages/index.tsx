@@ -52,15 +52,42 @@ export default function Home() {
       <main>
         <Heading as="h1" marginBottom="5">Predict miles per gallon</Heading>
         <form onSubmit={onSubmit}>
-          <FormControl id="zylinder" isRequired>
+          <FormControl id="EQW" isRequired>
             <Input
               onChange={handleOnChange}
               type="number"
               step="any"
-              value={inputs.zylinder}
-            />
-            <FormLabel fontWeight="bold">zylinder</FormLabel>
+              value={inputs.EQW}
+            /> <FormLabel fontWeight="bold">EQW</FormLabel>
           </FormControl>
+
+          <FormControl id="SBI" isRequired>               
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.SBI} /> <FormLabel fontWeight="bold">SBI</FormLabel> </FormControl>
+
+          <FormControl id="PJF" isRequired>
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.PJF} /> <FormLabel fontWeight="bold">PJF</FormLabel> </FormControl>
+
+          <FormControl id="HQE" isRequired>
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.HQE} /> <FormLabel fontWeight="bold">PJF</FormLabel> </FormControl>
+
+          <FormControl id="NXJ" isRequired> 
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.NXJ} /> <FormLabel fontWeight="bold">PJF</FormLabel> </FormControl>
+          
+          <FormControl id="WTT" isRequired> 
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.WTT} /> <FormLabel fontWeight="bold">WTT</FormLabel> </FormControl> 
+          
+          <FormControl id="PTI" isRequired> 
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.PTI} /> <FormLabel fontWeight="bold">PTI</FormLabel> </FormControl> 
+          
+          <FormControl id="FDJ" isRequired>
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.PJF} /> <FormLabel fontWeight="bold">FDJ</FormLabel> </FormControl> 
+          
+          <FormControl id="QWG" isRequired> 
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.PJF} /> <FormLabel fontWeight="bold">QWG</FormLabel> </FormControl> 
+          
+          <FormControl id="LQE" isRequired>
+            <Input onChange={handleOnChange} type="number" step="any" value={inputs.PJF} /> <FormLabel fontWeight="bold">LQE</FormLabel> </FormControl> 
+          
           <FormControl id="ps" isRequired>
             <Input
               onChange={handleOnChange}
