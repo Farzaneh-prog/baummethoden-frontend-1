@@ -51,7 +51,6 @@ export default function Home() {
 
       <main>
         <Heading as="h1" marginBottom="5">Predict miles per gallon</Heading>
-        {/* ['zylinder', 'ps', 'gewicht', 'beschleunigung', 'baujahr'] */}
         <form onSubmit={onSubmit}>
           <FormControl id="zylinder" isRequired>
             <Input
